@@ -1,6 +1,6 @@
 {
-  "name": "cordova-plugin-file-opener2",
-  "version": "4.0.0",
+  "name": "@zenkit-dev/cordova-plugin-file-opener2",
+  "version": "4.0.0-dev.2",
   "description": "A File Opener Plugin for Cordova. (The Original Version)",
   "cordova": {
     "id": "cordova-plugin-file-opener2",
@@ -11,10 +11,7 @@
       "electron"
     ]
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/pwlin/cordova-plugin-file-opener2.git"
-  },
+  "repository": "https://github.com/dertieran/cordova-plugin-file-opener2.git",
   "keywords": [
     "ecosystem:cordova",
     "cordova-android",
@@ -22,19 +19,6 @@
     "cordova-windows",
     "cordova-electron"
   ],
-  "engines": {
-    "cordovaDependencies": {
-      "2.0.0": {
-        "cordova": ">=6.0.0"
-      },
-      "3.0.0": {
-        "cordova": ">=7.0.0"
-      },
-      "4.0.0": {
-        "cordova-android": ">=10.0.0"
-      }
-    }
-  },
   "author": {
     "name": "pwlin05@gmail.com"
   },
