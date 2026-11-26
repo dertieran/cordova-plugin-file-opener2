@@ -134,11 +134,22 @@ NSString* callbackId = nil;
 	[self.commandDelegate sendPluginResult:pluginResult callbackId:callbackId];
 }
 
+- (UIWindow *)fo_keyWindow {
+	UIApplication *app = [UIApplication sharedApplication];
+	for (UIWindow *window in app.windows) {
+		if (window.isKeyWindow) {
+			return window;
+		}
+	}
+	return app.windows.firstObject;
+}
+
 - (UIViewController *)documentInteractionControllerViewControllerForPreview:(UIDocumentInteractionController *)controller {
 	UIViewController *presentingViewController = self.viewController;
+	UIWindow *keyWindow = [self fo_keyWindow];
 
-	if (presentingViewController.view.window != [UIApplication sharedApplication].keyWindow) {
-		presentingViewController = [UIApplication sharedApplication].keyWindow.rootViewController;
+	if (keyWindow != nil && presentingViewController.view.window != keyWindow) {
+		presentingViewController = keyWindow.rootViewController;
 	}
 
 	while (presentingViewController.presentedViewController != nil && ![presentingViewController.presentedViewController isBeingDismissed]) {
